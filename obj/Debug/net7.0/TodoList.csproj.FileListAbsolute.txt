@@ -44,3 +44,8 @@
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/obj/Debug/net7.0/TodoList.pdb
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/obj/Debug/net7.0/TodoList.genruntimeconfig.cache
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/obj/Debug/net7.0/ref/TodoList.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
