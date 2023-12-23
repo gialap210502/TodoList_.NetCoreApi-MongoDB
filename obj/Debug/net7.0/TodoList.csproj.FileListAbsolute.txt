@@ -49,3 +49,6 @@
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
 /Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/duonggialap/Documents/GitHub/TodoList_.NetCoreApi/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
