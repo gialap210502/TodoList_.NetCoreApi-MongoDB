@@ -29,6 +29,7 @@ public class UserController : Controller
     }
 
     [HttpGet]
+    [Authorize]
     public async Task<List<User>> Get()
     {
         return await _MongoDBService.GetAsync();
