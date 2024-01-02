@@ -8,12 +8,14 @@ namespace TodoList.Services;
 public class MongoDBService
 {
     private readonly IMongoCollection<User> _userCollection;
+    private readonly IMongoCollection<TodoItem> _todoCollection;
 
     public MongoDBService(IOptions<MongoDBSettings> mongoDBSettings)
     {
         MongoClient client = new MongoClient(mongoDBSettings.Value.ConnectionURI);
         IMongoDatabase database = client.GetDatabase(mongoDBSettings.Value.DatabaseName);
         _userCollection = database.GetCollection<User>(mongoDBSettings.Value.CollectionName);
+        _todoCollection = database.GetCollection<TodoItem>(mongoDBSettings.Value.TodoCollection);
     }
 
     public async Task Register(User user)
@@ -46,5 +48,21 @@ public class MongoDBService
             // Password doesn't match
             return null;
         }
+    }
+
+    //todo service
+
+    //get
+    public async Task<List<TodoItem>> GetTodoItemsAsync(string userId)
+    {
+        var filter = Builders<TodoItem>.Filter.Eq(item => item.UserId, userId);
+        return await _todoCollection.Find(filter).ToListAsync();
+    }
+
+    //create
+    public async Task Create(TodoItem todoItem)
+    {
+        await _todoCollection.InsertOneAsync(todoItem);
+        return;
     }
 }

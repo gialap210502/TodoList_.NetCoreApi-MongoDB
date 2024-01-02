@@ -29,7 +29,7 @@ public class UserController : Controller
     }
 
     [HttpGet]
-    //[Authorize]
+    [Authorize(Policy = "UserNamePolicy")]
     public async Task<List<User>> Get()
     {
         return await _MongoDBService.GetAsync();
@@ -58,7 +58,7 @@ public class UserController : Controller
         // Here, ensure that loggedInUser.Id is of the correct type (e.g., string)
         var userIdentity = new ClaimsIdentity(new Claim[]
         {
-        new Claim(ClaimTypes.Name, loggedInUser.Username) // Assuming loggedInUser.Id is of type ObjectId
+        new Claim("UserName", loggedInUser.Username) // Assuming loggedInUser.Id is of type ObjectId
         });
         var tokenDescriptor = new SecurityTokenDescriptor
         {
