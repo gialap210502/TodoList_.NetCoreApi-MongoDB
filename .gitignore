@@ -1,0 +1,23 @@
+# .NET Core
+*.obj
+*.bin
+*.user
+*.vs
+*.suo
+*.cache
+*.pdb
+*.log
+bin/
+obj/
+dotnet-appinfo.json
+/appsettings.Development.json
+/appsettings.Production.json
+
+# Compiled binaries
+*.dll
+
+# Visual Studio Code specific files
+.vscode/
+
+# Build Folders
+publish/
