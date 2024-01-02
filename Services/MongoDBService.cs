@@ -2,6 +2,7 @@ using TodoList.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;
 using MongoDB.Bson;
+using Microsoft.AspNetCore.Authentication.OAuth.Claims;
 
 namespace TodoList.Services;
 
@@ -64,5 +65,24 @@ public class MongoDBService
     {
         await _todoCollection.InsertOneAsync(todoItem);
         return;
+    }
+
+    //edit 
+    public async Task Update(string id, string name, string description, int status)
+    {
+        FilterDefinition<TodoItem> filter = Builders<TodoItem>.Filter.Eq("Id", id);
+        var update = Builders<TodoItem>.Update
+            .Set("Name", name)
+            .Set("Description", description)
+            .Set("Status", status);
+        await _todoCollection.UpdateOneAsync(filter, update);
+        return;
+    }
+
+    //delete
+    public async Task Delete(string id)
+    {
+        FilterDefinition<TodoItem> filter = Builders<TodoItem>.Filter.Eq("Id", id);
+        await _todoCollection.DeleteOneAsync(filter);
     }
 }

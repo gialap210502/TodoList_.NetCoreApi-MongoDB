@@ -27,15 +27,33 @@ public class TodoItemController : Controller
     }
 
     [HttpPost("GetTodoList")]
+    [Authorize]
     public async Task<List<TodoItem>> Get([FromBody] string userId)
     {
         return await _MongoDBService.GetTodoItemsAsync(userId);
     }
 
     [HttpPost]
+    [Authorize]
     public async Task<IActionResult> Create([FromBody] TodoItem todoItem)
     {
         await _MongoDBService.Create(todoItem);
         return Ok(todoItem);
+    }
+
+    [HttpPut("{id}")]
+    [Authorize]
+    public async Task<IActionResult> Update(string id, string name, string description, int status)
+    {
+        await _MongoDBService.Update(id, name, description, status);
+        return Ok("Update successfully!");
+    }
+
+    [HttpDelete("{id}")]
+    [Authorize]
+    public async Task<IActionResult> Delete(string id)
+    {
+        await _MongoDBService.Delete(id);
+        return Ok("Delete successfully!");
     }
 }
